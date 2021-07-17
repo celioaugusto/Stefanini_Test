@@ -102,6 +102,23 @@ namespace Stefanini_Test.PageObjects
             return element;
         }
 
+       
+
+        public void ExcluirUsuario(string nome)
+        {
+            IWebElement element = Helper.ObterElemento(By.CssSelector("div[class='register-form expanded'] table"));
+            IList<IWebElement> results = element.FindElements(By.TagName("tr"));
+            foreach (var item in results)
+            {
+                var rs = item.FindElements(By.TagName("td"));
+                if (nome == rs[1].Text)
+                {
+                    rs[3].Click();
+
+                }                
+            }
+        }
+
         public class DadosUsuario
         {
             public string nome { get; set; }

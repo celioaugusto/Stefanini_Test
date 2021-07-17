@@ -391,10 +391,16 @@ this.ScenarioInitialize(scenarioInfo);
                             "j.pera@gmail.com",
                             "Teste@123"});
 #line 44
- testRunner.When("Eu cadastrar os usuarios", ((string)(null)), table1, "Quando ");
+ testRunner.When("Eu cadastrar os usuarios:", ((string)(null)), table1, "Quando ");
 #line hidden
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "nome"});
+                table2.AddRow(new string[] {
+                            "Jualino Souza"});
+                table2.AddRow(new string[] {
+                            "Julia Pera"});
 #line 52
- testRunner.Then("Eu quero excluir o usuario", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+ testRunner.Then("Eu quero excluir o usuario", ((string)(null)), table2, "Entao ");
 #line hidden
             }
             this.ScenarioCleanup();

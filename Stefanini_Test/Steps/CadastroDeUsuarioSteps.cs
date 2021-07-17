@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using Stefanini_Test.Config;
 using Stefanini_Test.PageObjects;
 using System;
+using System.Collections.Generic;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using Xunit;
@@ -16,7 +17,7 @@ namespace Stefanini_Test.Steps
 
         private readonly AutomacaoWebTestsFixture testsFixture;
         private readonly Pgo_CadastroUsuario cadastroUsuario;
-
+        IList<string> vs = new List<string>();
 
   
 
@@ -160,16 +161,29 @@ namespace Stefanini_Test.Steps
         }
 
         [When(@"Eu cadastrar os usuarios")]
+        [When(@"Eu cadastrar os usuarios:")]
         public void QuandoEuCadastrarOsUsuarios(Table table)
         {
-            var data = table;
-           var data001 = data.CreateInstance<Pgo_CadastroUsuario.DadosUsuario>();
+
+            foreach (var row in table.Rows)
+            {
+                cadastroUsuario.PreencherNome(row["nome"]);
+                cadastroUsuario.PreencherEmail(row["email"]);
+                cadastroUsuario.PreencherPassword(row["senha"]);
+                cadastroUsuario.ClicarCadastrar();              
+                
+            }
+
+           
         }
 
         [Then(@"Eu quero excluir o usuario")]
-        public void EntaoEuQueroExcluirOUsuario()
+        public void EntaoEuQueroExcluirOUsuario(Table table)
         {
-            ScenarioContext.Current.Pending();
+            foreach (var row in table.Rows)
+            {
+                cadastroUsuario.ExcluirUsuario(row["nome"]);
+            }
         }
 
     }

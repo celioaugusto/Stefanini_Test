@@ -41,7 +41,7 @@ Cenário: Realizar cadastro do usuário
 
 Cenario: Excluir cadastro de usuario
 	Dado Que eu estou na tela de cadastro de usuario
-	Quando Eu cadastrar os usuarios
+	Quando Eu cadastrar os usuarios:
 	| nome            | email             | senha     |
 	| Jordan Silva    | j.silva@gmail.com | Teste@123 |
 	| Aparecido Alves | a.alves@gmail.com | Teste@123 |
@@ -50,6 +50,10 @@ Cenario: Excluir cadastro de usuario
 	| Julia Pera      | j.pera@gmail.com  | Teste@123 |
 	
 	Entao Eu quero excluir o usuario
+	| nome          |
+	| Jualino Souza |
+	| Julia Pera    |
+
 
 	
 	
