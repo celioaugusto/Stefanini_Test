@@ -52,11 +52,11 @@ namespace Stefanini_Test.PageObjects
         private By alSenha = By.XPath("//p[normalize-space()='O campo Senha é obrigatório.']");
 
 
-        public void PreencherCadastro(DadosUsuario dadosUsuario)
+        public void PreencherCadastro(CadastroUsuario dadosUsuario)
         {
-            Helper.PreencherTexto(cpNome, dadosUsuario.nome);
-            Helper.PreencherTexto(cpEmail, dadosUsuario.email);
-            Helper.PreencherTexto(cpSenha, dadosUsuario.senha);
+            Helper.PreencherTexto(cpNome, dadosUsuario.Nome);
+            Helper.PreencherTexto(cpEmail, dadosUsuario.Email);
+            Helper.PreencherTexto(cpSenha, dadosUsuario.Senha);
         }
 
         public void PreencherNome(string nome)
@@ -119,12 +119,7 @@ namespace Stefanini_Test.PageObjects
             }
         }
 
-        public class DadosUsuario
-        {
-            public string nome { get; set; }
-            public string email { get; set; }
-            public string senha { get; set; }
-        }
+      
 
     }
 
