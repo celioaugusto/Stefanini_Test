@@ -18,7 +18,7 @@ namespace Stefanini_Test.Hooks
         private readonly FeatureContext _featureContext;
         private readonly ScenarioContext _scenarioContext;
         private readonly AutomacaoWebTestsFixture _testsFixture;
-        //private readonly LoginUsuario _loginUsuario;
+        private readonly LoginUsuario _loginUsuario;
 
 
         private static ExtentTest featureName;
